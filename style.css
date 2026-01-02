@@ -1,32 +1,41 @@
-* {
+/* RESET (important for GitHub Pages consistency) */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: system-ui, sans-serif;
 }
 
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #4a90e2, #6edcc4);
+}
+
+.page {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
-/* Card animation */
-.form-container {
-  background: #fff;
+/* Card */
+.form-card {
   width: 100%;
-  max-width: 360px;
-  padding: 25px;
+  max-width: 380px;
+  background: #fff;
+  padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  animation: slideUp 0.6s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  animation: fadeUp 0.6s ease;
 }
 
-@keyframes slideUp {
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -39,23 +48,22 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* Inputs */
 label {
   display: block;
   font-size: 14px;
-  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 input,
 select {
   width: 100%;
+  margin-top: 6px;
   padding: 10px;
-  margin-top: 5px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  transition: border 0.3s, box-shadow 0.3s;
 }
 
-/* Input focus animation */
 input:focus,
 select:focus {
   outline: none;
@@ -63,35 +71,41 @@ select:focus {
   box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
 
-.options {
-  margin-top: 6px;
+/* Radio / Checkbox groups */
+fieldset {
+  border: none;
+  margin-bottom: 12px;
 }
 
-.options label {
+legend {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.option {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  cursor: pointer;
+  margin-top: 6px;
 }
 
-/* Normalize checkbox & radio alignment */
-.options input[type="radio"],
-.options input[type="checkbox"] {
+.option input {
   margin: 0;
   width: 16px;
   height: 16px;
 }
 
-/* Button animation */
+/* Button */
 button {
   width: 100%;
-  margin-top: 18px;
+  margin-top: 16px;
   padding: 12px;
   background: #4a90e2;
   color: white;
   border: none;
   border-radius: 8px;
+  font-size: 15px;
   cursor: pointer;
   transition: transform 0.2s, background 0.3s;
 }
@@ -105,13 +119,9 @@ button:active {
   transform: scale(0.97);
 }
 
-/* Mobile optimization */
-@media (max-width: 400px) {
-  .form-container {
+/* Mobile safety */
+@media (max-width: 420px) {
+  .form-card {
     padding: 20px;
-  }
-
-  h2 {
-    font-size: 20px;
   }
 }
