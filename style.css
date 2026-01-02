@@ -64,15 +64,23 @@ select:focus {
 }
 
 .options {
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .options label {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: 14px;
-  margin-top: 4px;
+  cursor: pointer;
+}
+
+/* Normalize checkbox & radio alignment */
+.options input[type="radio"],
+.options input[type="checkbox"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
 }
 
 /* Button animation */
